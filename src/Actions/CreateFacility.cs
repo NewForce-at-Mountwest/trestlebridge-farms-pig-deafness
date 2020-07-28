@@ -20,6 +20,19 @@ namespace Trestlebridge.Actions {
             {
                 case 1:
                     farm.AddGrazingField(new GrazingField());
+                    Console.WriteLine("Field has been created");
+                    break;
+                case 2:
+                    /*farm.AddPlowedField*/
+                    break;
+                case 3:
+                    /*farm.AddNaturalField*/
+                    break;
+                case 4:
+                    /*farm.AddChickenHouse*/
+                    break;
+                case 5:
+                    /*farm.AddDuckHouse*/
                     break;
                 case 2:
                     //farm.AddPlowedField(new PlowedField());
