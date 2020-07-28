@@ -8,8 +8,8 @@ namespace Trestlebridge.Actions {
     public class PurchaseSeeds {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Sesame");
-            Console.WriteLine ("2. WildFlower");
-            Console.WriteLine ("3. SunFlower");
+            Console.WriteLine ("2. SunFlower");
+            Console.WriteLine ("3. WildFlower");
 
             Console.WriteLine ();
             Console.WriteLine ("What are you buying today?");

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
-using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Actions
 {
@@ -16,6 +16,11 @@ namespace Trestlebridge.Actions
             {
                 Console.WriteLine($"{i + 1}. Natural Field");
             }
+            // for (int j= 0; int < farm.PlowedFields.Count; j++)
+            // {
+            //     Console.WriteLine($"{j + 1}. Plowed Field");
+            // }
+
 
             Console.WriteLine();
 
@@ -27,11 +32,7 @@ namespace Trestlebridge.Actions
 
             farm.NaturalFields[choice].AddResource(plant);
 
-            /*
-                Couldn't get this to work. Can you?
-                Stretch goal. Only if the app is fully functional.
-             */
-            // farm.PurchaseResource<IGrazing>(animal, choice);
+            
 
         }
     }
