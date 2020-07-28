@@ -7,8 +7,9 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 50;
+        private int _capacity = 1;
         private Guid _id = Guid.NewGuid();
+        public int currentNumberInField;
 
         private List<IGrazing> _animals = new List<IGrazing>();
 
@@ -20,13 +21,17 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource (IGrazing animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            _animals.Add(animal);
+            currentNumberInField += 1;
+            Console.WriteLine(Capacity);
+            Console.WriteLine();
+
         }
 
         public void AddResource (List<IGrazing> animals) 
         {
             // TODO: implement this...
+            Console.WriteLine("Test");
             throw new NotImplementedException();
         }
 
