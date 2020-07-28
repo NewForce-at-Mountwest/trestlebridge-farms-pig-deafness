@@ -13,7 +13,7 @@ namespace Trestlebridge.Models
 
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
 
-        //public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
+        public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
@@ -21,7 +21,7 @@ namespace Trestlebridge.Models
             This method must specify the correct product interface of the
             resource being purchased.
          */
-        public void PurchaseResource<T> (IResource resource, int index)
+        public void PurchaseResource<T>(IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());
             switch (typeof(T).ToString())
@@ -36,7 +36,7 @@ namespace Trestlebridge.Models
             }
         }
 
-        public void AddGrazingField (GrazingField field)
+        public void AddGrazingField(GrazingField field)
         {
             GrazingFields.Add(field);
             Console.WriteLine("Grazing Field has been added");
@@ -44,7 +44,15 @@ namespace Trestlebridge.Models
             Console.ReadLine();
         }
 
-        public void AddNaturalField (NaturalField field)
+        public void AddChickenHouse(ChickenHouse field)
+        {
+            ChickenHouses.Add(field);
+            Console.WriteLine("Chicken House has been added");
+            Console.WriteLine("Press enter key to continue");
+            Console.ReadLine();
+        }
+
+        public void AddNaturalField(NaturalField field)
         {
             NaturalFields.Add(field);
             Console.WriteLine("Natural Field has been added");
@@ -52,7 +60,8 @@ namespace Trestlebridge.Models
             Console.ReadLine();
         }
 
-        public void AddDuckHouse (DuckHouse field){
+        public void AddDuckHouse(DuckHouse field)
+        {
             DuckHouses.Add(field);
             Console.WriteLine("Duck House has been added");
             Console.WriteLine("Press enter key to continue");
