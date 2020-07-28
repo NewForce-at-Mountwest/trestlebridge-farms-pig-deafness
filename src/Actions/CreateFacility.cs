@@ -23,7 +23,7 @@ namespace Trestlebridge.Actions {
                     farm.AddGrazingField(new GrazingField());
                     break;
                 case 2:
-                    /*farm.AddPlowedField*/
+                    farm.AddPlowedField(new PlowedField());
                     break;
                 case 3:
                     farm.AddNaturalField(new NaturalField());
@@ -36,7 +36,6 @@ namespace Trestlebridge.Actions {
                     break;
                 default:
                     break;
-                    Console.WriteLine();
             }
         }
     }
