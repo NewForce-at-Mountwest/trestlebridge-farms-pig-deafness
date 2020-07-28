@@ -79,6 +79,7 @@ namespace Trestlebridge.Models
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            ChickenHouses.ForEach(ch => report.Append(ch));
 
             return report.ToString();
         }
