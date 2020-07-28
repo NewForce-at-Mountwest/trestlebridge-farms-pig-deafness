@@ -19,12 +19,24 @@ namespace Trestlebridge.Models.Facilities {
             }
         } 
 
-        public void AddResource(IResource resource)
+        public void AddResource (IGrazing animal)
+        {
+            // TODO: implement this...
+            throw new NotImplementedException();
+        }
+
+        public void AddResource (List<IGrazing> animals) 
+        {
+            // TODO: implement this...
+            throw new NotImplementedException();
+        }
+
+        public void AddResource(List<ICompostProducing> plants)
         {
             throw new NotImplementedException();
         }
 
-        public void AddResource(List<IResource> resources)
+        internal void AddResource(ICompostProducing resource)
         {
             throw new NotImplementedException();
         }

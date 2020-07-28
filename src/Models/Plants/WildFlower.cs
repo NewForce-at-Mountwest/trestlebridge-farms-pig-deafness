@@ -5,10 +5,12 @@ namespace Trestlebridge.Models.Plants
 {
     public class WildFlower : IResource, ICompostProducing
     {
+        private Guid _id = Guid.NewGuid();
         private double _compostProduced = 30.3;
-        public string Type { get; } = "Wildflower";
+        public string Type { get; } = "WildFlower";
 
-        public double Harvest () {
+        public double Compost()
+        {
             return _compostProduced;
         }
 

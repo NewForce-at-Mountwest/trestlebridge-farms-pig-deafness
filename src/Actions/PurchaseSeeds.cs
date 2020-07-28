@@ -1,15 +1,15 @@
 using System;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
-using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Plants;
 using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions {
     public class PurchaseSeeds {
         public static void CollectInput (Farm farm) {
-            Console.WriteLine ("1. Sesame seeds");
-            Console.WriteLine ("2. Wildflower seeds");
-            Console.WriteLine ("3. Sunflower seeds");
+            Console.WriteLine ("1. Sesame");
+            Console.WriteLine ("2. WildFlower");
+            Console.WriteLine ("3. SunFlower");
 
             Console.WriteLine ();
             Console.WriteLine ("What are you buying today?");
@@ -22,7 +22,12 @@ namespace Trestlebridge.Actions {
                 case 1:
                     ChoosePlantingField.CollectInput(farm, new Sesame());
                     break;
-
+                case 2:
+                    ChoosePlantingField.CollectInput(farm, new WildFlower());
+                    break;
+                case 3:
+                    ChoosePlantingField.CollectInput(farm, new SunFlower());
+                    break;
                 default:
                     break;
             }

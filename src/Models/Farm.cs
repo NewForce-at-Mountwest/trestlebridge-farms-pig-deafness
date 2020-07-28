@@ -29,6 +29,8 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "WildFlower"
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
                 default:
                     break;
             }

@@ -25,7 +25,7 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.PlantingFields[choice].AddResource(plant);
+            farm.NaturalFields[choice].AddResource(plant);
 
             /*
                 Couldn't get this to work. Can you?
