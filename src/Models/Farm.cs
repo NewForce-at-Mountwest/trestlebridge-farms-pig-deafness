@@ -37,7 +37,7 @@ namespace Trestlebridge.Models
         public void AddGrazingField (GrazingField field)
         {
             GrazingFields.Add(field);
-            Console.WriteLine("Field has been added");
+            Console.WriteLine("Grazing Field has been added");
             Console.WriteLine("Press enter key to continue");
             Console.ReadLine();
         }
@@ -45,6 +45,9 @@ namespace Trestlebridge.Models
         public void AddNaturalField (NaturalField field)
         {
             NaturalFields.Add(field);
+            Console.WriteLine("Natural Field has been added");
+            Console.WriteLine("Press enter key to continue");
+            Console.ReadLine();
         }
 
 
