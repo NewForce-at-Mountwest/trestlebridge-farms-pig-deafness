@@ -15,7 +15,7 @@ namespace Trestlebridge.Models
 
         //public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
-        //public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         /*
             This method must specify the correct product interface of the
@@ -46,6 +46,13 @@ namespace Trestlebridge.Models
         {
             NaturalFields.Add(field);
             Console.WriteLine("Natural Field has been added");
+            Console.WriteLine("Press enter key to continue");
+            Console.ReadLine();
+        }
+
+        public void AddDuckHouse (DuckHouse field){
+            DuckHouses.Add(field);
+            Console.WriteLine("Duck House has been added");
             Console.WriteLine("Press enter key to continue");
             Console.ReadLine();
         }
