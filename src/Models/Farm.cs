@@ -9,7 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
-        //public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
+        public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
 
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
 
@@ -50,6 +50,13 @@ namespace Trestlebridge.Models
             Console.ReadLine();
         }
 
+        public void AddPlowedField(PlowedField field)
+        {
+            PlowedFields.Add(field);
+            Console.WriteLine("Plowed field has been created");
+            Console.WriteLine("Press enter key to continue");
+            Console.ReadLine();
+        }
 
         public override string ToString()
         {

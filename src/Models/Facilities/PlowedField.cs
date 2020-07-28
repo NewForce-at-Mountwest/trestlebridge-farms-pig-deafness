@@ -3,17 +3,23 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class PlowedField :IFacility<ISeedProducing>
+    public class PlowedField :IFacility<IResource>
     {
-        public double Capacity { get; }
-        public void AddResource(ISeedProducing resource)
+        /*Number of rows in the field*/
+        private static int Rows = 13;
+        /*Number of plants per row*/
+        private static int Plants = 5;
+        /*Total capacity of the field*/
+        public double Capacity => Rows * Plants;
+
+        public void AddResource(IResource resource)
         {
-            /*Adds seed?*/
+            /*Placeholder*/
         }
 
-        public void AddResource(List<ISeedProducing> resources)
+        public void AddResource(List<IResource> resources)
         {
-            /*List of resources*/
+            /*throw new System.NotImplementedException();*/
         }
     }
 }
