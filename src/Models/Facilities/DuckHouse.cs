@@ -16,6 +16,8 @@ namespace Trestlebridge.Models.Facilities
             }
         }
 
+        private List<IResource> _ducks = new List<IResource>();
+
         double IFacility<IResource>.Capacity => throw new NotImplementedException();
 
         public void AddResource(IResource resource)
@@ -23,9 +25,9 @@ namespace Trestlebridge.Models.Facilities
             throw new NotImplementedException();
         }
 
-        public void AddResource(List<IResource> resources)
+        public void AddResource(List<IResource> duck)
         {
-            throw new NotImplementedException();
+            _ducks.Add(duck);
         }
     }
 }
