@@ -27,7 +27,7 @@ namespace Trestlebridge.Models.Facilities
 
         public void AddResource(List<IResource> duck)
         {
-            _ducks.Add(duck);
+            // _ducks.Add(duck);
         }
     }
 }
