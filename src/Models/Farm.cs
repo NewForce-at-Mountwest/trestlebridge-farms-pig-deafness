@@ -31,7 +31,7 @@ namespace Trestlebridge.Models
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
                 case "Wildflower":
-                     NaturalFields[index].AddResource((ICompostProducing)resource);
+                     NaturalFields[index].AddResource((IResource)resource);
                      break;
                 default:
                     break;

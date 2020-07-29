@@ -7,7 +7,7 @@ namespace Trestlebridge.Models.Plants
     {
         private Guid _id = Guid.NewGuid();
         private double _compostProduced = 30.3;
-        public string Type { get; } = "WildFlower";
+        public string Type { get; } = "Wildflower";
 
         public double Compost()
         {

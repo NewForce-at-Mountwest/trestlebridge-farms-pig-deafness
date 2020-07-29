@@ -8,19 +8,22 @@ namespace Trestlebridge.Actions
 {
     public class ChoosePlantingField
     {
-        public static void CollectInput(Farm farm, IResource plant)
+        public static void CollectInput(Farm farm, <T> plant)
         {
             Utils.Clear();
 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
+                // if(i > 0){
                 Console.WriteLine($"{i + 1}. Natural Field");
-            }
-            // for (int j= 0; int < farm.PlowedFields.Count; j++)
-            // {
-            //     Console.WriteLine($"{j + 1}. Plowed Field");
-            // }
+                // if(farm.PlowedFields.Count > 0){
 
+            }
+
+            for (int j = 0; j < farm.PlowedFields.Count; j++)
+            {
+                Console.WriteLine($"{farm.NaturalFields.Count + j + 1}. Plowed Field");
+            }
 
             Console.WriteLine();
 
@@ -30,9 +33,9 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.NaturalFields[choice].AddResource(plant);
-
-            
+            farm.NaturalFields[choice - 1].AddResource(plant);
+            Console.WriteLine("Plant added to field");
+            Console.ReadLine();
 
         }
     }
