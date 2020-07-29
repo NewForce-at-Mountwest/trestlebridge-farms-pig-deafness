@@ -30,8 +30,11 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Sunflower":
+                    PlowedFields[index].AddResource((ISeedProducing)resource);
+                    break;
                 case "Wildflower":
-                     NaturalFields[index].AddResource((IResource)resource);
+                     NaturalFields[index].AddResource((ICompostProducing)resource);
                      break;
                 default:
                     break;

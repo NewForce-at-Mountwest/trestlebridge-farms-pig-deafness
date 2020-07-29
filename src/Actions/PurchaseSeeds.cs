@@ -19,14 +19,17 @@ namespace Trestlebridge.Actions {
 
             switch (Int32.Parse(choice))
             {
-                case 1:
-                    ChoosePlantingField.CollectInput(farm, new Sesame());
-                    break;
-                case 2:
-                    ChoosePlantingField.CollectInput(farm, new SunFlower());
-                    break;
+                // case 1:
+                //     ChoosePlantingField.CollectSeedPlantInput(farm, new Sesame());
+                //     break;
+                // case 2:
+                //     ChoosePlantingField.CollectSeedPlantInput(farm, new SunFlower());
+                //     break;
                 case 3:
-                    ChoosePlantingField.CollectInput(farm, new WildFlower());
+                    ChoosePlantingField.CollectCompostPlantInput(farm, new SunFlower());
+                    break;
+                case 4:
+                    ChoosePlantingField.CollectCompostPlantInput(farm, new WildFlower());
                     break;
                 default:
                     break;

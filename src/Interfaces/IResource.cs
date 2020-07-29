@@ -4,4 +4,6 @@ namespace Trestlebridge.Interfaces
     {
         string Type { get; }
     }
+
+
 }

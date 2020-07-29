@@ -5,8 +5,9 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class NaturalField : IFacility<IResource>
+    public class NaturalField : IFacility<ICompostProducing>
     {
+        private Guid _id = Guid.NewGuid();
         public int Rows { get; set; } = 10;
         public int Plants { get; set; } = 6;
         
@@ -17,19 +18,37 @@ namespace Trestlebridge.Models.Facilities {
                 return Rows * Plants;
             }
         } 
-        private List<IResource> _plants = new List<IResource>();
-      
+        
 
-        public void AddResource(IResource plant)
+//Current number of plants in the field
+
+        public int currentNumberInField;
+
+        private List<ICompostProducing> _plants = new List<ICompostProducing>();
+
+        public void AddResource(ICompostProducing plant)
         {
             _plants.Add(plant);
+            currentNumberInField += 1;
+            Console.WriteLine(currentNumberInField);
+            Console.WriteLine();
         }
 
-        public void AddResource(List<IResource> plants)
+        public void AddResource (List<ICompostProducing> plants)
+            {
+
+            }
+
+       public override string ToString()
         {
-            
-        }
+            StringBuilder output = new StringBuilder();
+            string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-        
+            output.Append($"Natural field {shortId} has {this._plants.Count} plants\n");
+            this._plants.ForEach(p => output.Append($"   {p}\n"));
+
+            return output.ToString();
+        }     
+         
     }
 }
