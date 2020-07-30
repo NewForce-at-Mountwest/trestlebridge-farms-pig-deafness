@@ -32,7 +32,8 @@ namespace Trestlebridge.Actions
 
             farm.NaturalFields[choice -1].AddResource(plant);
 
-            //console writeline that plant was succesfully added to field,
+            Console.WriteLine("Plant was succesfully added to field.");
+            Console.ReadLine();
             // console readline pause that plant was usccefully added
 
             
