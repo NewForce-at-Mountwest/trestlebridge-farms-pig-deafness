@@ -6,20 +6,20 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions
 {
-    public class ChooseDuckHouse
+    public class ChooseChickenHouse
     {
-        public static void CollectInput(Farm farm, IEggProducing animal)
+        public static void CollectInput(Farm farm, IFeatherProducing animal)
         {
             Utils.Clear();
-            
+
             bool Placed = false;
             while (Placed == false)
             {
-                for (int i = 0; i < farm.DuckHouses.Count; i++)
+                for (int i = 0; i < farm.ChickenHouses.Count; i++)
                 {
-                    Console.WriteLine(farm.DuckHouses[i].Capacity == farm.DuckHouses[i].ducksInDuckHouse
-                        ? $"{i + 1}. Duck House (Full)"
-                        : $"{i + 1}. Duck House ({farm.DuckHouses[i].ducksInDuckHouse} Ducks)");
+                    Console.WriteLine(farm.ChickenHouses[i].Capacity == farm.ChickenHouses[i].chickensInChickenHouse
+                        ? $"{i + 1}. Chicken House (Full)"
+                        : $"{i + 1}. Chicken House ({farm.ChickenHouses[i].chickensInChickenHouse} Chickens)");
                 }
 
                 Console.WriteLine();
@@ -32,7 +32,7 @@ namespace Trestlebridge.Actions
                 {
                     int choice = Int32.Parse(Console.ReadLine());
                     
-                    if (farm.DuckHouses[choice - 1].ducksInDuckHouse == farm.DuckHouses[choice - 1].Capacity)
+                    if (farm.ChickenHouses[choice - 1].chickensInChickenHouse == farm.ChickenHouses[choice - 1].Capacity)
                     {
                         Console.WriteLine("**** That facility is not large enough ****");
                         Console.WriteLine("****     Please choose another one      ****");
@@ -41,7 +41,7 @@ namespace Trestlebridge.Actions
 
                     else
                     {
-                        farm.DuckHouses[choice -1].AddResource(animal);
+                        farm.ChickenHouses[choice -1].AddResource(animal);
                         Placed = true;
                         Console.WriteLine("Break Point");
                     }
@@ -51,7 +51,6 @@ namespace Trestlebridge.Actions
                     Console.WriteLine("Please enter only numbers");
                 }
             }
-
         }
     }
 }

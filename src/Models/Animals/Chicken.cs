@@ -8,13 +8,13 @@ namespace Trestlebridge.Models.Animals {
         private Guid _id = Guid.NewGuid();
         private double _meatProduced = 1.7;
         private int _eggsProduced = 7;
-        private double _featherProduced = 0.5;
+        private double _feathersProduced = 0.5;
         private string _shortId {
             get {
                 return this._id.ToString().Substring(this._id.ToString().Length - 6);
             }
         }
-        public double GrassPerDay { get; set; } = 0.9;
+        public double FeedPerDay { get; set; } = 0.9;
         public string Type { get; } = "Chicken";
 
         // Methods
@@ -34,7 +34,7 @@ namespace Trestlebridge.Models.Animals {
 
         public double FeathersCollected()
         {
-            return _featherProduced;
+            return _feathersProduced;
         }
     }
 }

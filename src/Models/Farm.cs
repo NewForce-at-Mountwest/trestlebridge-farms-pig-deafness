@@ -29,6 +29,12 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Duck":
+                    DuckHouses[index].AddResource((IEggProducing) resource);
+                    break;
+                case "Chicken":
+                    ChickenHouses[index].AddResource((IFeatherProducing) resource);
+                    break;
                 default:
                     break;
             }
@@ -80,6 +86,7 @@ namespace Trestlebridge.Models
 
             GrazingFields.ForEach(gf => report.Append(gf));
             ChickenHouses.ForEach(ch => report.Append(ch));
+            DuckHouses.ForEach(dh => report.Append(dh));
 
             return report.ToString();
         }

@@ -10,10 +10,10 @@ namespace Trestlebridge.Models.Animals {
         private double _feathersProduced = 0.75;
         private string _shortId {
             get {
-                return this._id.ToString().Substring(this._id.ToString().Length - 5);
+                return this._id.ToString().Substring(this._id.ToString().Length - 6);
             }
         }
-        public double GrassPerDay { get; set; } = 0.8;
+        public double FeedPerDay { get; set; } = 0.8;
         public string Type { get; } = "Duck";
 
         // Methods
