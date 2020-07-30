@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models.Facilities;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models
 {
@@ -29,6 +30,18 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Sesame":
+                    PlowedFields[index].AddResource((ISeedProducing)resource);
+                    break;
+                // case "Sunflower":
+                //     PlowedFields[index].AddResource((ISeedProducing)resource);
+                //     break;
+                case "Sunflower":
+                    NaturalFields[index].AddResource((ICompostProducing) resource);
+                    break;
+                case "Wildflower":
+                     NaturalFields[index].AddResource((ICompostProducing)resource);
+                     break;
                 default:
                     break;
             }
