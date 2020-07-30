@@ -5,9 +5,11 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class DuckHouse : IFacility<IResource>
+    public class DuckHouse : IFacility<IEggProducing>
     {
         private int _capacity = 12;
+        private Guid _id = Guid.NewGuid();
+        public int ducksInDuckHouse;
 
         public double Capacity {
             get {
@@ -15,16 +17,32 @@ namespace Trestlebridge.Models.Facilities
             }
         }
 
-        double IFacility<IResource>.Capacity => throw new NotImplementedException();
+        private List<IEggProducing> _ducks = new List<IEggProducing>();
 
-        public void AddResource(IResource resource)
+        double IFacility<IEggProducing>.Capacity => throw new NotImplementedException();
+
+        public void AddResource(IEggProducing duck)
+        {
+            _ducks.Add(duck);
+            ducksInDuckHouse += 1;
+            Console.WriteLine(ducksInDuckHouse);
+            Console.WriteLine();
+        }
+
+        public void AddResource(List<IEggProducing> resources)
         {
             throw new NotImplementedException();
         }
 
-        public void AddResource(List<IResource> resources)
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            StringBuilder output = new StringBuilder();
+            string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
+
+            output.Append($"Duck House {shortId} has {this._ducks.Count} ducks\n");
+            this._ducks.ForEach(a => output.Append($"   {a}\n"));
+
+            return output.ToString();
         }
     }
 }
