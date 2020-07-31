@@ -30,12 +30,27 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
-                case "Wildflower":
-                    NaturalFields[index].AddResource((IResource)resource);
+                case "Duck":
+                    DuckHouses[index].AddResource((IEggProducing) resource);
                     break;
+                case "Chicken":
+                    ChickenHouses[index].AddResource((IFeatherProducing) resource);
+                    break;
+                case "Sesame":
+                    PlowedFields[index].AddResource((ISeedProducing)resource);
+                    break;
+                // case "Sunflower":
+                //     PlowedFields[index].AddResource((ISeedProducing)resource);
+                //     break;
                 case "Sunflower":
-                    NaturalFields[index].AddResource((IResource)resource);
+                    NaturalFields[index].AddResource((ICompostProducing) resource);
                     break;
+                case "Wildflower":
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
+                    break;
+                // case "Sunflower":
+                //     NaturalFields[index].AddResource((IResource)resource);
+                //     break;
                 default:
                     break;
             }
@@ -86,7 +101,10 @@ namespace Trestlebridge.Models
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
-
+            ChickenHouses.ForEach(ch => report.Append(ch));
+            DuckHouses.ForEach(dh => report.Append(dh));
+            PlowedFields.ForEach(pf => report.Append(pf));
+            NaturalFields.ForEach(nf => report.Append(nf));
             return report.ToString();
         }
     }
