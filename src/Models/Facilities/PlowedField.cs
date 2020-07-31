@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class PlowedField :IFacility<ISeedProducing>
+    public class PlowedField : IFacility<ISeedProducing>
     {
         private Guid _id = Guid.NewGuid();
 
@@ -21,7 +21,7 @@ namespace Trestlebridge.Models.Facilities
         private List<ISeedProducing> _plants = new List<ISeedProducing>();
         public void AddResource(ISeedProducing plant)
         {
-             /*Adding the animal to the list*/
+            /*Adding the animal to the list*/
             _plants.Add(plant);
             /*Incrementing the number in field variable*/
             currentNumberInField += 1;
@@ -31,7 +31,7 @@ namespace Trestlebridge.Models.Facilities
 
         }
 
-        public void AddResource (List<ISeedProducing> plants) 
+        public void AddResource(List<ISeedProducing> plants)
         {
             // TODO: implement this...
             throw new NotImplementedException();
@@ -48,6 +48,6 @@ namespace Trestlebridge.Models.Facilities
             return output.ToString();
         }
 
-        }
-
     }
+
+}
